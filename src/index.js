@@ -1,13 +1,15 @@
-function Ship(length) {
+// ship factory
+export default function Ship(length) {
   let hit = 0;
-  const getHit = () => hit++;
+  const getHit = () => {
+    hit += 1;
+  };
 
   const isSunk = () => {
-    if (getHit() === length) return true;
+    if (hit === length) return true;
     return false;
   };
-  return { getHit, length, isSunk };
+  return { getHit, isSunk };
 }
 
 const cruiser = Ship(3);
-console.log(cruiser);
