@@ -13,3 +13,20 @@ export default function Ship(length) {
 }
 
 const cruiser = Ship(3);
+
+function Gameboard() {
+  const board = () => {
+    const array = [];
+    const row = 10;
+    const col = 10;
+    let h = 0;
+
+    for (let i = 0; i < row; i++) {
+      array[i] = [];
+      for (let j = 0; j < col; j++) {
+        array[i][j] = h++;
+      }
+    }
+  };
+  return board;
+}
