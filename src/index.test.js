@@ -12,7 +12,9 @@ describe("patrolBoat factory", () => {
 describe("Gameboard ", () => {
   it("places ship on the right coordinate", () => {
     const gameboard = Gameboard();
-    const board = gameboard.board();
-    expect(gameboard.placeShip(3, 4)).toBe(board[3][4] === 1);
+    gameboard.placeShip(3, 4, 2); // horizontally
+    const board = gameboard.getArr();
+    expect(board[3][4]).toBeTruthy();
+    expect(board[3][3]).toBeTruthy();
   });
 });

@@ -34,14 +34,10 @@ export function Gameboard() {
       while (i < length) {
         arr[x][y - i] = 1; // horizontal
         i++;
+        // (later) if rotated(), arr[x-i][y]
       }
     }
     // return arr;
   };
   return { board, placeShip, getArr };
 }
-
-const gameboard = Gameboard();
-console.log(gameboard.placeShip(3, 4, 3));
-// console.log(gameboard.board());
-console.log(gameboard.getArr());
