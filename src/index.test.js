@@ -1,10 +1,10 @@
 import Ship from "./index";
 
-describe("ship factory", () => {
+describe("patrolBoat factory", () => {
   it("sinks when fully hit", () => {
-    const ship = Ship(2);
-    ship.getHit();
-    ship.getHit();
-    expect(ship.isSunk()).toBeTruthy();
+    const patrolBoat = Ship(2);
+    patrolBoat.getHit();
+    patrolBoat.getHit();
+    expect(patrolBoat.isSunk()).toBeTruthy();
   });
 });

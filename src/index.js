@@ -18,14 +18,26 @@ function Gameboard() {
     const row = 10;
     const arr = [];
 
-    for (let i = 0; i < col; i++) {
-      arr[i] = [];
-      for (let j = 0; j < row; j++) {
+    for (let i = 0; i < row; i++) {
+      arr[i] = []; // x axis
+      for (let j = 0; j < col; j++) {
         arr[i][j] = 0;
       }
     }
     return arr;
   };
 
-  return { board };
+  //   const getBoard = () => board();
+  // placeShip
+  // gameBoard.placeShip(3) will place the ship to where it's clicked?
+  const placeShip = (x, y) => {
+    const board = board();
+    if (board[x][y] === 0) {
+      board[x][y] = 1;
+    }
+    return { board, placeShip };
+  };
+  //   const receiveAttack = (coor) => {
+
+  //   }
 }
