@@ -1,5 +1,4 @@
-// ship factory
-export default function Ship(length) {
+export function Ship(length) {
   let hit = 0;
   const getHit = () => {
     hit += 1;
@@ -12,32 +11,37 @@ export default function Ship(length) {
   return { getHit, isSunk };
 }
 
-function Gameboard() {
+export function Gameboard() {
   const board = () => {
     const col = 10;
     const row = 10;
     const arr = [];
 
     for (let i = 0; i < row; i++) {
-      arr[i] = []; // x axis
+      arr[i] = [];
       for (let j = 0; j < col; j++) {
         arr[i][j] = 0;
       }
     }
     return arr;
   };
-
-  //   const getBoard = () => board();
-  // placeShip
-  // gameBoard.placeShip(3) will place the ship to where it's clicked?
-  const placeShip = (x, y) => {
-    const board = board();
-    if (board[x][y] === 0) {
-      board[x][y] = 1;
+  const arr = board(); // board array, returns the computed arr
+  const getArr = () => arr;
+  const placeShip = (x, y, length) => {
+    // const board = board();
+    if (arr[x][y] === 0) {
+      let i = 0;
+      while (i < length) {
+        arr[x][y - i] = 1; // horizontal
+        i++;
+      }
     }
-    return { board, placeShip };
+    // return arr;
   };
-  //   const receiveAttack = (coor) => {
-
-  //   }
+  return { board, placeShip, getArr };
 }
+
+const gameboard = Gameboard();
+console.log(gameboard.placeShip(3, 4, 3));
+// console.log(gameboard.board());
+console.log(gameboard.getArr());
