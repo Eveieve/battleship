@@ -12,21 +12,20 @@ export default function Ship(length) {
   return { getHit, isSunk };
 }
 
-const cruiser = Ship(3);
-
 function Gameboard() {
   const board = () => {
-    const array = [];
-    const row = 10;
     const col = 10;
-    let h = 0;
+    const row = 10;
+    const arr = [];
 
-    for (let i = 0; i < row; i++) {
-      array[i] = [];
-      for (let j = 0; j < col; j++) {
-        array[i][j] = h++;
+    for (let i = 0; i < col; i++) {
+      arr[i] = [];
+      for (let j = 0; j < row; j++) {
+        arr[i][j] = 0;
       }
     }
+    return arr;
   };
-  return board;
+
+  return { board };
 }
