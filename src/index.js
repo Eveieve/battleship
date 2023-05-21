@@ -40,6 +40,8 @@ export function Gameboard() {
     return arr;
   };
   const placeVertical = (x, y, length) => {
+    if (x < 0 || x > 9 || y < 0 || y > 9) return null;
+
     if (arr[x][y] === 0) {
       let i = 0;
       while (i < length) {
