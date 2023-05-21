@@ -29,7 +29,7 @@ export function Gameboard() {
   const getArr = () => arr;
 
   const placeHorizontal = (x, y, length) => {
-    // event handler
+    if (x < 0 || x > 9 || y < 0 || y > 9) return null;
     if (arr[x][y] === 0) {
       let i = 0;
       while (i < length) {
@@ -37,15 +37,17 @@ export function Gameboard() {
         i++;
       }
     }
+    return arr;
   };
   const placeVertical = (x, y, length) => {
     if (arr[x][y] === 0) {
       let i = 0;
       while (i < length) {
-        arr[x - i][y] = 1; //
+        arr[x - i][y] = 1;
         i++;
       }
     }
+    return arr;
   };
-  return { board, placeHorizontal, getArr, placeVertical };
+  return { board, getArr, placeHorizontal, placeVertical };
 }

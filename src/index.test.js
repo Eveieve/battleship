@@ -13,7 +13,7 @@ describe("Gameboard ", () => {
   let gameboard;
 
   beforeEach(() => {
-    // run this before each test in this suteste
+    // run this before each test in this suite
     gameboard = Gameboard();
   });
 
@@ -29,7 +29,7 @@ describe("Gameboard ", () => {
     expect(board[3][4]).toBeTruthy();
     expect(board[2][4]).toBeTruthy();
   });
-  test("ignore placing outside the board", () => {
-    // code
+  test.only("ignore placing outside the board", () => {
+    expect(gameboard.placeHorizontal(10, 10, 2)).toBeNull();
   });
 });
