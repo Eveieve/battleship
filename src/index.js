@@ -27,16 +27,25 @@ export function Gameboard() {
   };
   const arr = board(); // board array, returns the computed arr
   const getArr = () => arr;
-  const placeShip = (x, y, length) => {
+
+  const placeHorizontal = (x, y, length) => {
+    // event handler
     if (arr[x][y] === 0) {
       let i = 0;
       while (i < length) {
         arr[x][y - i] = 1; // horizontal
         i++;
-        // (later) if rotated(), arr[x-i][y]
       }
     }
-    // return arr;
   };
-  return { board, placeShip, getArr };
+  const placeVertical = (x, y, length) => {
+    if (arr[x][y] === 0) {
+      let i = 0;
+      while (i < length) {
+        arr[x - i][y] = 1; //
+        i++;
+      }
+    }
+  };
+  return { board, placeHorizontal, getArr, placeVertical };
 }
