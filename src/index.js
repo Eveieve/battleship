@@ -28,7 +28,6 @@ export function Gameboard() {
   const arr = board(); // board array, returns the computed arr
   const getArr = () => arr;
   const placeShip = (x, y, length) => {
-    // const board = board();
     if (arr[x][y] === 0) {
       let i = 0;
       while (i < length) {

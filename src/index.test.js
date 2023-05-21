@@ -10,8 +10,14 @@ describe("patrolBoat factory", () => {
 });
 
 describe("Gameboard ", () => {
+  let gameboard;
+
+  beforeEach(() => {
+    // run this before each test in this suite
+    gameboard = Gameboard();
+  });
+
   it("places ship on the right coordinate", () => {
-    const gameboard = Gameboard();
     gameboard.placeShip(3, 4, 2); // horizontally
     const board = gameboard.getArr();
     expect(board[3][4]).toBeTruthy();
