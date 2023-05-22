@@ -51,5 +51,12 @@ export function Gameboard() {
     }
     return arr;
   };
+
+  const receiveAttack = (x, y) => {
+    // if attack hit the ship,
+    // increment(call) the hit of that ship
+    // else if didn't hit,
+    // record the coordinate(cell) so it can display it
+  };
   return { board, getArr, placeHorizontal, placeVertical };
 }

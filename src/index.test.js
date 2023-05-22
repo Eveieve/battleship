@@ -29,7 +29,16 @@ describe("Gameboard ", () => {
     expect(board[3][4]).toBeTruthy();
     expect(board[2][4]).toBeTruthy();
   });
-  test.only("ignore placing outside the board", () => {
+  test("ignore placing outside the board", () => {
     expect(gameboard.placeHorizontal(10, 10, 2)).toBeNull();
+  });
+  // receiveAttack()
+  test("call hit() of correct ship when attacked", () => {
+    // if the hit condition to be true
+    // increase the hit of that ship
+  });
+  test("record the coordinates if missed", () => {
+    // if the attack misses,
+    // record so it can display on the board
   });
 });
