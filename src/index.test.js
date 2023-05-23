@@ -41,4 +41,7 @@ describe("Gameboard ", () => {
     // if the attack misses,
     // record so it can display on the board
   });
+  test("report when all ships have been sunk", () => {
+    // return true when all ships have sunk
+  });
 });

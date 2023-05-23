@@ -57,6 +57,11 @@ export function Gameboard() {
     // increment(call) the hit of that ship
     // else if didn't hit,
     // record the coordinate(cell) so it can display it
+    if (arr[x][y] === 1) {
+      // switch statements?
+      // if ship.length === 2
+      // patrolBoat.hit();
+    }
   };
   return { board, getArr, placeHorizontal, placeVertical };
 }
